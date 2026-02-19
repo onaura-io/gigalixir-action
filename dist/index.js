@@ -1141,7 +1141,7 @@ async function run() {
 
       try {
         await core.group("Running migrations", async () => {
-          await exec.exec(`gigalixir ps:migrate -a ${gigalixirApp}`)
+          await exec.exec(`gigalixir ps:migrate -o "-T" -a ${gigalixirApp}`)
         });
       } catch (error) {
         if (currentRelease === 0) {
